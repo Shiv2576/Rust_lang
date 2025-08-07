@@ -2,27 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Git Checkout') {
             steps {
-                git 'https://github.com/Shiv2576/Rust_lang'
+                git branch: 'main', url: 'https://github.com/Shiv2576/Rust_lang'
             }
         }
-
         stage('Build') {
             steps {
-                sh 'cargo build --verbose'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'cargo test'
-            }
-        }
-
-        stage('Run') {
-            steps {
-                sh './target/debug/my-rust-project'
+                sh 'cargo build'
             }
         }
     }

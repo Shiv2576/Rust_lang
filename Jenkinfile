@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com//my-rust-project.git'
+                git 'https://github.com/Shiv2576/Rust_lang'
             }
         }
 
